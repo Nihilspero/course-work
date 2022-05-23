@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<style>
+  .md-content article h1 {
+    display: none;
+  }
+
+  footer nav.md-footer__inner {
+    display: none;
+  }
+
+  .visible {
+    overflow: visible;
+  }
+
+  .display-none {
+    display: none;
+  }
+
+  .title-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+  }
+
+  .title-header span {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.1rem;
+  }
+
+  .title-header span:first-child {
+    margin-bottom: 5px;
+  }
+
+  .img-header-block {
+    height: 15vh;
+    background-image: url(../assets/cropped-biznes-informatika.jpg);
+    position: relative;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .autor-block {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .autor-block .autor-border {
+    width: 75%;
+    margin: 0 auto;
+    border-bottom: 4px solid #4051b5;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .autor-block .autor-border span {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+
+  .book-name-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .book-name-block .book-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .book-type {
+    font-size: 0.9rem;
+    line-height: 1rem;
+  }
+
+  .title-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px;
+  }
+
+  .title-footer span {
+    font-size: 0.7rem;
+  }
+
+  .md-sidebar--secondary:not([hidden]) {
+    display: none;
+  }
+
+  .title-footer a {
+    color: #fff;
+    margin: 0 auto;
+    padding: 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 6px 21px 6px rgb(0 0 0 / 20%);
+    transition: box-shadow .3s;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: #4051b5;
+  }
+
+  .title-footer a:hover {
+    box-shadow: 5px 6px 21px 6px rgb(0 0 0 / 40%);
+  }
+
+
+  .md-footer__title {
+    padding-left: 0.45rem;
+    font-size: 0.7rem;
+    line-height: 2.4rem;
+  }
+
+  .hero-btn {
+    margin: 0rem 0.25rem;
+  }
+
+  .md-footer__button {
+    padding: 0rem;
+  }
+
+  .hero-btn svg {
+      width: 0.8rem;
+    }
+
+  @media (min-width: 280px) and (max-width: 1300px) and (min-height: 200px) and (max-height: 700px) {
+    .img-header-block {
+      display: none;
+    }
+
+    .title-header span {
+      font-size: 0.7rem;
+      line-height: 0.9rem;
+    }
+
+    .autor-block .autor-border span {
+      text-align: center;
+      font-size: 0.5rem;
+      line-height: 0.8rem;
+    }
+
+    .book-name-block .book-name {
+      font-size: 0.9rem;
+      line-height: 1.1rem;
+    }
+
+    .book-name-block .book-type {
+      font-size: 0.7rem;
+      line-height: 1rem;
+    }
+
+    .hero-title {
+      font-size: 0.6rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block hero %}
+<div class="title-header">
+  <span>МІНІСТЕРСТВО ОСВІТИ І НАУКИ УКРАЇНИ</span><span>ВИЩИЙ НАВЧАЛЬНИЙ ЗАКЛАД</span>
+</div>
+<div class="img-header-block">
+  <div class="opacity-header-block">
+
+  </div>
+</div>
+<div class="autor-block">
+  <div class="autor-border">
+
+    <span>
+      {{page.meta.authors}}
+    </span>
+  </div>
+</div>
+<div class="book-name-block">
+  <span class="book-name"> {{ page.meta.title }}</span>
+  <span class="book-type">
+    {{page.meta.type}}
+  </span>
+</div>
+<div class="title-footer">
+  <a aria-label="Відкрити" class="md-footer__link md-footer__link--next hero-link" href="00_preface/" rel="next">
+    <div class="md-footer__title hero-title">
+      <div class="md-ellipsis visible">
+        Відкрити
+      </div>
+
+    </div>
+    <div class="md-footer__button md-icon hero-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path>
+      </svg>
+    </div>
+  </a>
+  <span>
+    {{page.meta.city_year}}
+  </span>
+</div>
+{% endblock %}
